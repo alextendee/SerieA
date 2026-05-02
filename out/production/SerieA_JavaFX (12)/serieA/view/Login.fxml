@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="450.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.LoginController"
+            style="-fx-background-color: #1a1a2e;">
+
+    <VBox alignment="CENTER" spacing="14.0"
+          AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="15.0"
+          AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+
+        <Label text="SERIE A MANAGER" style="-fx-font-size:26; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+        <Label text="Accedi al tuo account" style="-fx-font-size:13; -fx-text-fill:#a0a0b0;"/>
+
+        <VBox spacing="5.0" maxWidth="300.0">
+            <Label text="Username" style="-fx-text-fill:white; -fx-font-size:13;"/>
+            <TextField fx:id="txtUsername" promptText="Inserisci username"
+                       style="-fx-background-color:#16213e; -fx-text-fill:white; -fx-prompt-text-fill:#666; -fx-border-color:#e94560; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8;"/>
+        </VBox>
+
+        <VBox spacing="5.0" maxWidth="300.0">
+            <Label text="Password" style="-fx-text-fill:white; -fx-font-size:13;"/>
+            <PasswordField fx:id="txtPassword" promptText="Inserisci password"
+                           style="-fx-background-color:#16213e; -fx-text-fill:white; -fx-prompt-text-fill:#666; -fx-border-color:#e94560; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8;"/>
+        </VBox>
+
+        <Label fx:id="lblErrore" text="" style="-fx-text-fill:#ff6b6b; -fx-font-size:12;"/>
+
+        <Button text="ACCEDI" onAction="#handleLogin"
+                maxWidth="300.0"
+                style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-font-weight:bold; -fx-font-size:14; -fx-background-radius:8; -fx-padding:10 0 10 0; -fx-cursor:hand;"/>
+
+        <Hyperlink text="Non hai un account? Registrati" onAction="#handleRegistrati"
+                   style="-fx-text-fill:#a0a0ff; -fx-font-size:12; -fx-border-color:transparent;"/>
+
+        <VBox spacing="3.0" style="-fx-border-color:#333; -fx-border-radius:6; -fx-background-color:#16213e; -fx-background-radius:6; -fx-padding:8;" maxWidth="300.0">
+            <Label text="Account demo (password: admin123 / user123):" style="-fx-text-fill:#888; -fx-font-size:10; -fx-font-weight:bold;"/>
+            <Label text="Utente:  user / user123" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="Admin:   admin_napoli  |  admin_inter  |  admin_milan" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_juve  |  admin_atalanta  |  admin_roma" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_lazio | admin_fiorentina | admin_bologna" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_como | admin_genoa | admin_torino" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_udinese | admin_cagliari | admin_verona" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_lecce | admin_parma | admin_monza" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+            <Label text="         admin_empoli | admin_venezia" style="-fx-text-fill:#aaa; -fx-font-size:10;"/>
+        </VBox>
+    </VBox>
+</AnchorPane>

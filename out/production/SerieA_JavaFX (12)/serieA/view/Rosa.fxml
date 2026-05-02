@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.RosaController"
+            style="-fx-background-color:#1a1a2e;">
+
+    <VBox spacing="0"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color:#16213e; -fx-padding:15 20 15 20;">
+            <Label fx:id="lblSquadra" text="Rosa"
+                   style="-fx-font-size:20; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="txtRicerca" promptText="Cerca giocatore..."
+                       prefWidth="250"
+                       style="-fx-background-color:#0f3460; -fx-text-fill:white; -fx-prompt-text-fill:#888; -fx-border-color:#e94560; -fx-border-radius:20; -fx-background-radius:20; -fx-padding:6 12 6 12;"/>
+        </HBox>
+
+        <Label text="Clicca un giocatore per vedere i dettagli"
+               style="-fx-text-fill:#888; -fx-font-size:11; -fx-padding:6 20 4 20; -fx-background-color:#1a1a2e;"/>
+
+        <TableView fx:id="tabellaRosa" VBox.vgrow="ALWAYS"
+                   style="-fx-background-color:#16213e;">
+            <columns>
+                <TableColumn fx:id="colNome"        text="Nome"        prefWidth="100"/>
+                <TableColumn fx:id="colCognome"     text="Cognome"     prefWidth="130"/>
+                <TableColumn fx:id="colNazionalita" text="Nazionalita" prefWidth="110"/>
+                <TableColumn fx:id="colEta"         text="Eta"         prefWidth="55"/>
+                <TableColumn fx:id="colAltezza"     text="Alt. (cm)"   prefWidth="80"/>
+                <TableColumn fx:id="colGol"         text="Gol"         prefWidth="60"/>
+                <TableColumn fx:id="colAssist"      text="Assist"      prefWidth="70"/>
+                <TableColumn fx:id="colValore"      text="Valore"      prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-padding:10 20 10 20; -fx-background-color:#16213e;">
+            <Button text="Chiudi" onAction="#handleChiudi"
+                    style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:8 20 8 20; -fx-cursor:hand;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

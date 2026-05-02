@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.DettaglioGiocatoreController"
+            style="-fx-background-color:#1a1a2e;">
+
+    <VBox spacing="18" alignment="CENTER"
+          AnchorPane.topAnchor="30" AnchorPane.bottomAnchor="30"
+          AnchorPane.leftAnchor="60" AnchorPane.rightAnchor="60">
+
+        <Label text="Scheda Giocatore" style="-fx-font-size:14; -fx-text-fill:#888;"/>
+        <Label fx:id="lblNomeCompleto" text=""
+               style="-fx-font-size:28; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+        <Label fx:id="lblSquadra" text=""
+               style="-fx-font-size:14; -fx-text-fill:#a0a0ff;"/>
+
+        <!-- Info grid -->
+        <VBox spacing="10" style="-fx-background-color:#16213e; -fx-padding:20; -fx-background-radius:10;">
+            <Label text="Informazioni Personali"
+                   style="-fx-text-fill:#e94560; -fx-font-weight:bold; -fx-font-size:13;"/>
+            <HBox spacing="40">
+                <VBox spacing="8">
+                    <Label fx:id="lblNazionalita" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                    <Label fx:id="lblEta" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                    <Label fx:id="lblAltezza" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label fx:id="lblGol" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                    <Label fx:id="lblAssist" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                    <Label fx:id="lblValore" text=""
+                           style="-fx-text-fill:#f0c040; -fx-font-size:14; -fx-font-weight:bold;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Admin buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="btnCompra" text="COMPRA" onAction="#handleCompra"
+                    prefWidth="160"
+                    style="-fx-background-color:#2d8a4e; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:14; -fx-cursor:hand;"/>
+            <Button fx:id="btnVendi" text="VENDI" onAction="#handleVendi"
+                    prefWidth="160"
+                    style="-fx-background-color:#c0392b; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:14; -fx-cursor:hand;"/>
+        </HBox>
+
+        <Button text="Chiudi" onAction="#handleChiudi"
+                style="-fx-background-color:transparent; -fx-text-fill:#888; -fx-border-color:#555; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8 30 8 30; -fx-cursor:hand;"/>
+    </VBox>
+</AnchorPane>

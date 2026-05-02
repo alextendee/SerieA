@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="850.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.StoricoTrasferimentiController"
+            style="-fx-background-color:#1a1a2e;">
+
+    <VBox spacing="0"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              style="-fx-background-color:#16213e; -fx-padding:15 20 15 20;">
+            <Label fx:id="lblSquadra" text="Storico Trasferimenti"
+                   style="-fx-font-size:20; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+        </HBox>
+
+        <TableView fx:id="tabellaStoico" VBox.vgrow="ALWAYS"
+                   style="-fx-background-color:#16213e;">
+            <columns>
+                <TableColumn fx:id="colGiocatore"    text="Giocatore"   prefWidth="180"/>
+                <TableColumn fx:id="colProvenienza"  text="Da"          prefWidth="160"/>
+                <TableColumn fx:id="colDestinazione" text="A"           prefWidth="160"/>
+                <TableColumn fx:id="colImporto"      text="Importo"     prefWidth="110"/>
+                <TableColumn fx:id="colData"         text="Data"        prefWidth="110"/>
+            </columns>
+            <placeholder>
+                <Label text="Nessun trasferimento registrato"
+                       style="-fx-text-fill:#888;"/>
+            </placeholder>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-padding:10 20 10 20; -fx-background-color:#16213e;">
+            <Button text="Chiudi" onAction="#handleChiudi"
+                    style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:8 20 8 20; -fx-cursor:hand;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

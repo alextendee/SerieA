@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.StatisticheSquadraController"
+            style="-fx-background-color:#1a1a2e;">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="30" AnchorPane.bottomAnchor="30"
+          AnchorPane.leftAnchor="60" AnchorPane.rightAnchor="60">
+
+        <Label fx:id="lblNome" text="Squadra"
+               style="-fx-font-size:30; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+
+        <!-- Stats cards -->
+        <VBox spacing="12" style="-fx-background-color:#16213e; -fx-padding:20; -fx-background-radius:10;">
+            <Label text="Statistiche Stagione" style="-fx-text-fill:#e94560; -fx-font-weight:bold; -fx-font-size:14;"/>
+            <Label fx:id="lblPunti" text="" style="-fx-text-fill:white; -fx-font-size:16; -fx-font-weight:bold;"/>
+            <Label fx:id="lblRecord" text="" style="-fx-text-fill:#cccccc; -fx-font-size:14;"/>
+            <Label fx:id="lblGol" text="" style="-fx-text-fill:#cccccc; -fx-font-size:14;"/>
+        </VBox>
+
+        <!-- Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Rosa" onAction="#handleRosa"
+                    prefWidth="150"
+                    style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:13; -fx-cursor:hand;"/>
+            <Button text="Storico Trasferimenti" onAction="#handleStoico"
+                    prefWidth="200"
+                    style="-fx-background-color:#0f3460; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:13; -fx-cursor:hand; -fx-border-color:#e94560; -fx-border-radius:8;"/>
+            <Button fx:id="btnBilancio" text="Bilancio" onAction="#handleBilancio"
+                    prefWidth="150"
+                    style="-fx-background-color:#2d8a4e; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:13; -fx-cursor:hand;"/>
+        </HBox>
+
+        <Button text="Chiudi" onAction="#handleChiudi"
+                style="-fx-background-color:transparent; -fx-text-fill:#888; -fx-border-color:#555; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8 30 8 30; -fx-cursor:hand;"/>
+    </VBox>
+</AnchorPane>

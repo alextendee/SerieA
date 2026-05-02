@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="serieA.controller.ClassificaController"
+            style="-fx-background-color:#0f3460;">
+
+    <VBox spacing="0"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color:#16213e; -fx-padding:15 20 15 20;">
+            <Label text="Seria A" style="-fx-font-size:22; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+            <Label text="Classifica" style="-fx-font-size:18; -fx-text-fill:white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT">
+                <Label fx:id="lblUtente" text="" style="-fx-text-fill:white; -fx-font-size:13;"/>
+                <Label fx:id="lblRuolo" text="" style="-fx-text-fill:#e94560; -fx-font-size:11;"/>
+            </VBox>
+            <Button text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-background-radius:6; -fx-cursor:hand; -fx-font-size:12;"/>
+        </HBox>
+
+        <Label text="Clicca una squadra per vedere le statistiche"
+               style="-fx-text-fill:#aaa; -fx-font-size:11; -fx-padding:8 20 4 20; -fx-background-color:#1a1a2e;"/>
+
+        <TableView fx:id="tabellaClassifica" VBox.vgrow="ALWAYS"
+                   style="-fx-background-color:#16213e; -fx-table-cell-border-color:transparent;">
+            <columns>
+                <TableColumn fx:id="colNome"  text="Squadra" prefWidth="160"/>
+                <TableColumn fx:id="colPunti" text="Pt"      prefWidth="55"/>
+                <TableColumn fx:id="colPG"    text="PG"      prefWidth="55"/>
+                <TableColumn fx:id="colPV"    text="V"       prefWidth="55"/>
+                <TableColumn fx:id="colPP"    text="P"       prefWidth="55"/>
+                <TableColumn fx:id="colPL"    text="S"       prefWidth="55"/>
+                <TableColumn fx:id="colGF"    text="GF"      prefWidth="70"/>
+                <TableColumn fx:id="colGS"    text="GS"      prefWidth="70"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>
