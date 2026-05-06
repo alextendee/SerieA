@@ -62,21 +62,6 @@ public class ClassificaController {
     @FXML
     private void initialize() {
         tabellaClassifica.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        colLogo.setCellValueFactory(c -> c.getValue().nomeProperty());
-        colLogo.setCellFactory(col -> new TableCell<Squadra, String>() {
-            private final ImageView imageView = new ImageView();
-            { imageView.setFitWidth(32); imageView.setFitHeight(32); imageView.setPreserveRatio(true); }
-            @Override
-            protected void updateItem(String nome, boolean empty) {
-                super.updateItem(nome, empty);
-                if (empty || nome == null) { setGraphic(null); return; }
-                URL url = getClass().getResource(
-                        "/serieA/loghi/" + nome.toLowerCase() + ".png");
-                if (url != null) imageView.setImage(new Image(url.toExternalForm()));
-                setGraphic(url != null ? imageView : null);
-                setStyle("-fx-alignment: CENTER;");
-            }
-        });
         colNome.setCellValueFactory(c -> c.getValue().nomeProperty());
         colPunti.setCellValueFactory(c -> c.getValue().puntiProperty());
         colPG.setCellValueFactory(c -> c.getValue().partiteGiocateProperty());
