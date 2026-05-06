@@ -1,9 +1,9 @@
 package serieA.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import serieA.Main;
 import serieA.model.Gestione;
 import serieA.model.Squadra;
 
@@ -15,16 +15,13 @@ public class StatisticheSquadraController {
     @FXML private Label lblBilancio;
     @FXML private Button btnBilancio;
 
-    private Main main;
     private Gestione gestione;
     private Squadra squadra;
     private boolean isAdmin;
     private String squadraAdmin;
     private Stage stage;
-
-    public void setMain(Main main, Gestione gestione, Squadra squadra,
+    public void initData(Gestione gestione, Squadra squadra,
                         boolean isAdmin, String squadraAdmin, Stage stage) {
-        this.main = main;
         this.gestione = gestione;
         this.squadra = squadra;
         this.isAdmin = isAdmin;
@@ -48,18 +45,51 @@ public class StatisticheSquadraController {
 
     @FXML
     private void handleRosa() {
-        stage.close();
-        main.mostraRosa(squadra, isAdmin, squadraAdmin);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/serieA/view/Rosa.fxml"));
+            javafx.scene.layout.AnchorPane pane = loader.load();
+            Stage s = new Stage();
+            s.setTitle("Rosa - " + squadra.getNome());
+            s.setScene(new javafx.scene.Scene(pane, 900, 600));
+            serieA.controller.RosaController ctrl = loader.getController();
+            ctrl.initData(gestione, squadra, isAdmin, squadraAdmin, s);
+            stage.close();
+            s.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleStoico() {
-        main.mostraStoricoTrasferimenti(squadra);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/serieA/view/StoricoTrasferimenti.fxml"));
+            javafx.scene.layout.AnchorPane pane = loader.load();
+            Stage s = new Stage();
+            s.setTitle("Storico Trasferimenti - " + squadra.getNome());
+            s.setScene(new javafx.scene.Scene(pane, 850, 550));
+            serieA.controller.StoricoTrasferimentiController ctrl = loader.getController();
+            ctrl.setMain(gestione, squadra, s);
+            s.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleBilancio() {
-        main.mostraBilancio(squadra);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/serieA/view/Bilancio.fxml"));
+            javafx.scene.layout.AnchorPane pane = loader.load();
+            Stage s = new Stage();
+            s.setTitle("Bilancio - " + squadra.getNome());
+            s.setScene(new javafx.scene.Scene(pane, 600, 450));
+            serieA.controller.BilancioController ctrl = loader.getController();
+            ctrl.setMain(gestione, squadra, s);
+            s.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

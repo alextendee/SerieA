@@ -3,7 +3,6 @@ package serieA.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import serieA.Main;
 import serieA.model.Gestione;
 import serieA.model.Giocatore;
 import serieA.model.Squadra;
@@ -22,7 +21,6 @@ public class DettaglioGiocatoreController {
     @FXML private Button btnCompra;
     @FXML private Button btnVendi;
 
-    private Main main;
     private Gestione gestione;
     private Giocatore giocatore;
     private Squadra squadraGiocatore;
@@ -30,9 +28,8 @@ public class DettaglioGiocatoreController {
     private String squadraAdmin;
     private Stage stage;
 
-    public void setMain(Main main, Gestione gestione, Giocatore giocatore,
+    public void initData(Gestione gestione, Giocatore giocatore,
                         Squadra squadraGiocatore, boolean isAdmin, String squadraAdmin, Stage stage) {
-        this.main = main;
         this.gestione = gestione;
         this.giocatore = giocatore;
         this.squadraGiocatore = squadraGiocatore;

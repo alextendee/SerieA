@@ -2,8 +2,10 @@ package serieA.controller;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import serieA.Main;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import serieA.model.Gestione;
 import serieA.model.Squadra;
 
@@ -22,14 +24,13 @@ public class ClassificaController {
     @FXML private Label lblUtente;
     @FXML private Label lblRuolo;
 
-    private Main main;
     private Gestione gestione;
     private boolean isAdmin;
     private String squadraAdmin;
 
-    public void setMain(Main main, Gestione gestione, String username,
-                        boolean isAdmin, String squadraAdmin) {
-        this.main = main;
+    // Initialize controller with model and the stage that hosts this view
+    public void initData(Gestione gestione, String username,
+                         boolean isAdmin, String squadraAdmin, Stage stage) {
         this.gestione = gestione;
         this.isAdmin = isAdmin;
         this.squadraAdmin = squadraAdmin;
@@ -37,7 +38,7 @@ public class ClassificaController {
         lblUtente.setText("Benvenuto, " + username);
         lblRuolo.setText(isAdmin ? "Admin - " + squadraAdmin : "Utente");
 
-        // Copia la lista e ordina alfabeticamente
+        // Sort list alphabetically
         FXCollections.sort(
                 gestione.getSquadre(),
                 new Comparator<Squadra>() {
@@ -62,7 +63,7 @@ public class ClassificaController {
         colGF.setCellValueFactory(c -> c.getValue().golFattiProperty());
         colGS.setCellValueFactory(c -> c.getValue().golSubitiProperty());
 
-        // Centra il testo di tutte le colonne numeriche
+        // Center numeric columns
         for (TableColumn<Squadra, Number> col : java.util.Arrays.asList(
                 colPunti, colPG, colPV, colPP, colPL, colGF, colGS)) {
             col.setCellFactory(tc -> new TableCell<Squadra, Number>() {
@@ -83,13 +84,38 @@ public class ClassificaController {
             Squadra selezionata = tabellaClassifica.getSelectionModel().getSelectedItem();
             if (selezionata != null) {
                 tabellaClassifica.getSelectionModel().clearSelection();
-                main.mostraStatisticheSquadra(selezionata, isAdmin, squadraAdmin);
+                // Load Statistiche view
+                try {
+                    FXMLLoader loader = new FXMLLoader();
+                    java.net.URL url = getClass().getResource("/serieA/view/StatisticheSquadra.fxml");
+                    loader.setLocation(url);
+                    AnchorPane pane = loader.load();
+                    Stage s = new Stage();
+                    s.setTitle("Statistiche - " + selezionata.getNome());
+                    s.setScene(new javafx.scene.Scene(pane, 700, 500));
+                    StatisticheSquadraController ctrl = loader.getController();
+                    ctrl.initData(gestione, selezionata, isAdmin, squadraAdmin, s);
+                    s.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
     @FXML
     private void handleLogout() {
-        main.mostraLogin();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            java.net.URL url = getClass().getResource("/serieA/view/Login.fxml");
+            loader.setLocation(url);
+            AnchorPane pane = loader.load();
+            Stage stage = (Stage) lblUtente.getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(pane, 450, 430));
+            LoginController ctrl = loader.getController();
+            ctrl.initData(gestione);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

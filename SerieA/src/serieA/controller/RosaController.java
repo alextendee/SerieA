@@ -2,9 +2,9 @@ package serieA.controller;
 
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import serieA.Main;
 import serieA.model.Gestione;
 import serieA.model.Giocatore;
 import serieA.model.Squadra;
@@ -22,16 +22,14 @@ public class RosaController {
     @FXML private TableColumn<Giocatore, Number> colAssist;
     @FXML private TableColumn<Giocatore, Number> colValore;
 
-    private Main main;
     private Gestione gestione;
     private Squadra squadra;
     private boolean isAdmin;
     private String squadraAdmin;
     private Stage stage;
 
-    public void setMain(Main main, Gestione gestione, Squadra squadra,
+    public void initData(Gestione gestione, Squadra squadra,
                         boolean isAdmin, String squadraAdmin, Stage stage) {
-        this.main = main;
         this.gestione = gestione;
         this.squadra = squadra;
         this.isAdmin = isAdmin;
@@ -56,7 +54,18 @@ public class RosaController {
             Giocatore selezionato = tabellaRosa.getSelectionModel().getSelectedItem();
             if (selezionato != null) {
                 tabellaRosa.getSelectionModel().clearSelection();
-                main.mostraGiocatore(selezionato, squadra, isAdmin, squadraAdmin);
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/serieA/view/DettaglioGiocatore.fxml"));
+                    javafx.scene.layout.AnchorPane pane = loader.load();
+                    Stage s = new Stage();
+                    s.setTitle("Giocatore - " + selezionato.getNome() + " " + selezionato.getCognome());
+                    s.setScene(new javafx.scene.Scene(pane, 700, 550));
+                    serieA.controller.DettaglioGiocatoreController ctrl = loader.getController();
+                    ctrl.initData(gestione, selezionato, squadra, isAdmin, squadraAdmin, s);
+                    s.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

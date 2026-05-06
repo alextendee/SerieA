@@ -3,7 +3,6 @@ package serieA.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import serieA.Main;
 import serieA.model.Gestione;
 import serieA.model.Utente;
 
@@ -14,12 +13,11 @@ public class RegistrazioneController {
     @FXML private Label lblErrore;
     @FXML private Label lblSuccesso;
 
-    private Main main;
     private Gestione gestione;
     private Stage stage;
 
-    public void setMain(Main main, Gestione gestione, Stage stage) {
-        this.main = main;
+    // Initialize controller with model and its own stage
+    public void initData(Gestione gestione, Stage stage) {
         this.gestione = gestione;
         this.stage = stage;
     }
@@ -65,6 +63,5 @@ public class RegistrazioneController {
     @FXML
     private void handleTornaLogin() {
         stage.close();
-        main.mostraLogin();
     }
 }
