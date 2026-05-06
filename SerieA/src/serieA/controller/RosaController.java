@@ -26,14 +26,16 @@ public class RosaController {
     private Squadra squadra;
     private boolean isAdmin;
     private String squadraAdmin;
+    private boolean isSuperAdmin;
     private Stage stage;
 
     public void initData(Gestione gestione, Squadra squadra,
-                        boolean isAdmin, String squadraAdmin, Stage stage) {
+                        boolean isAdmin, String squadraAdmin, boolean isSuperAdmin, Stage stage) {
         this.gestione = gestione;
         this.squadra = squadra;
         this.isAdmin = isAdmin;
         this.squadraAdmin = squadraAdmin;
+        this.isSuperAdmin = isSuperAdmin;
         this.stage = stage;
 
         lblSquadra.setText("Rosa - " + squadra.getNome());
@@ -61,7 +63,7 @@ public class RosaController {
                     s.setTitle("Giocatore - " + selezionato.getNome() + " " + selezionato.getCognome());
                     s.setScene(new javafx.scene.Scene(pane, 700, 550));
                     serieA.controller.DettaglioGiocatoreController ctrl = loader.getController();
-                    ctrl.initData(gestione, selezionato, squadra, isAdmin, squadraAdmin, s);
+                    ctrl.initData(gestione, selezionato, squadra, isAdmin, squadraAdmin, isSuperAdmin, s);
                     s.show();
                 } catch (Exception e) {
                     e.printStackTrace();

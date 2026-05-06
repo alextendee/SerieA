@@ -19,13 +19,15 @@ public class StatisticheSquadraController {
     private Squadra squadra;
     private boolean isAdmin;
     private String squadraAdmin;
+    private boolean isSuperAdmin;
     private Stage stage;
     public void initData(Gestione gestione, Squadra squadra,
-                        boolean isAdmin, String squadraAdmin, Stage stage) {
+                        boolean isAdmin, String squadraAdmin, boolean isSuperAdmin, Stage stage) {
         this.gestione = gestione;
         this.squadra = squadra;
         this.isAdmin = isAdmin;
         this.squadraAdmin = squadraAdmin;
+        this.isSuperAdmin = isSuperAdmin;
         this.stage = stage;
 
         lblNome.setText(squadra.getNome());
@@ -37,8 +39,8 @@ public class StatisticheSquadraController {
                 squadra.getGolFatti(), squadra.getGolSubiti(),
                 squadra.getGolFatti() - squadra.getGolSubiti()));
 
-        // Bilancio visibile solo all'admin della squadra
-        boolean puoVedereBilancio = isAdmin && squadra.getNome().equals(squadraAdmin);
+        // Bilancio visibile all'admin della squadra o al super admin
+        boolean puoVedereBilancio = isSuperAdmin || (isAdmin && squadra.getNome().equals(squadraAdmin));
         btnBilancio.setVisible(puoVedereBilancio);
         btnBilancio.setManaged(puoVedereBilancio);
     }
@@ -52,7 +54,7 @@ public class StatisticheSquadraController {
             s.setTitle("Rosa - " + squadra.getNome());
             s.setScene(new javafx.scene.Scene(pane, 900, 600));
             serieA.controller.RosaController ctrl = loader.getController();
-            ctrl.initData(gestione, squadra, isAdmin, squadraAdmin, s);
+            ctrl.initData(gestione, squadra, isAdmin, squadraAdmin, isSuperAdmin, s);
             stage.close();
             s.show();
         } catch (Exception e) {

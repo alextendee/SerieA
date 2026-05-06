@@ -56,7 +56,7 @@ public class LoginController {
                 stage.setScene(new javafx.scene.Scene(pane, 1000, 650));
                 stage.setTitle("Serie A - Classifica");
                 serieA.controller.ClassificaController ctrl = loader.getController();
-                ctrl.initData(gestione, u.getUsername(), u.isAdmin(), u.getSquadraAmministrata(), stage);
+                ctrl.initData(gestione, u.getUsername(), u.isAdmin(), u.getSquadraAmministrata(), u.isSuperAdmin(), stage);
             } catch (Exception e) {
                 e.printStackTrace();
                 lblErrore.setText("Errore apertura Classifica: " + e.getMessage());

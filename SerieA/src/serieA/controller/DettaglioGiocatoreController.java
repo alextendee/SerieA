@@ -26,21 +26,23 @@ public class DettaglioGiocatoreController {
     private Squadra squadraGiocatore;
     private boolean isAdmin;
     private String squadraAdmin;
+    private boolean isSuperAdmin;
     private Stage stage;
 
     public void initData(Gestione gestione, Giocatore giocatore,
-                        Squadra squadraGiocatore, boolean isAdmin, String squadraAdmin, Stage stage) {
+                        Squadra squadraGiocatore, boolean isAdmin, String squadraAdmin, boolean isSuperAdmin, Stage stage) {
         this.gestione = gestione;
         this.giocatore = giocatore;
         this.squadraGiocatore = squadraGiocatore;
         this.isAdmin = isAdmin;
         this.squadraAdmin = squadraAdmin;
+        this.isSuperAdmin = isSuperAdmin;
         this.stage = stage;
 
         aggiornaDati();
 
-        boolean mio = isAdmin && squadraGiocatore.getNome().equals(squadraAdmin);
-        boolean altrui = isAdmin && !squadraGiocatore.getNome().equals(squadraAdmin);
+        boolean mio = !isSuperAdmin && isAdmin && squadraGiocatore.getNome().equals(squadraAdmin);
+        boolean altrui = !isSuperAdmin && isAdmin && !squadraGiocatore.getNome().equals(squadraAdmin);
 
         btnVendi.setVisible(mio);
         btnVendi.setManaged(mio);

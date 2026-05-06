@@ -31,7 +31,7 @@ public class Gestione {
 
 
     // CARICAMENTO UTENTI
-    // formato: username,password,admin,squadra
+    // formato: username,password,admin,squadra,superadmin
     private void caricaUtenti() {
         try (BufferedReader br = apriCsv("utenti.csv")) {
             String riga;
@@ -42,12 +42,13 @@ public class Gestione {
                 if (primaRiga) { primaRiga = false; continue; } // salta header
                 String[] col = riga.split(",", -1);
                 if (col.length < 4) continue;
-                String username  = col[0].trim();
-                String password  = col[1].trim();
-                boolean isAdmin  = Boolean.parseBoolean(col[2].trim());
-                String squadra   = col[3].trim();
+                String username    = col[0].trim();
+                String password    = col[1].trim();
+                boolean isAdmin    = Boolean.parseBoolean(col[2].trim());
+                String squadra     = col[3].trim();
+                boolean isSuperAdmin = col.length >= 5 && Boolean.parseBoolean(col[4].trim());
                 utenti.add(new Utente(username, password, isAdmin,
-                        squadra.isEmpty() ? null : squadra));
+                        squadra.isEmpty() ? null : squadra, isSuperAdmin));
             }
         } catch (IOException e) {
             System.err.println("Errore caricamento utenti.csv: " + e.getMessage());
@@ -172,12 +173,13 @@ public class Gestione {
     private void salvaUtenti() {
         File f = csvFile("utenti.csv");
         try (PrintWriter pw = new PrintWriter(new OutputStreamWriter(new FileOutputStream(f), "UTF-8"))) {
-            pw.println("username,password,admin,squadra");
+            pw.println("username,password,admin,squadra,superadmin");
             for (Utente u : utenti) {
                 pw.println(u.getUsername() + ","
                         + u.getPassword() + ","
                         + u.isAdmin() + ","
-                        + (u.getSquadraAmministrata() != null ? u.getSquadraAmministrata() : ""));
+                        + (u.getSquadraAmministrata() != null ? u.getSquadraAmministrata() : "") + ","
+                        + u.isSuperAdmin());
             }
         } catch (IOException e) {
             System.err.println("Errore salvataggio utenti.csv: " + e.getMessage());

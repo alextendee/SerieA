@@ -27,16 +27,19 @@ public class ClassificaController {
     private Gestione gestione;
     private boolean isAdmin;
     private String squadraAdmin;
+    private boolean isSuperAdmin;
 
     // Initialize controller with model and the stage that hosts this view
     public void initData(Gestione gestione, String username,
-                         boolean isAdmin, String squadraAdmin, Stage stage) {
+                         boolean isAdmin, String squadraAdmin, boolean isSuperAdmin, Stage stage) {
         this.gestione = gestione;
         this.isAdmin = isAdmin;
         this.squadraAdmin = squadraAdmin;
+        this.isSuperAdmin = isSuperAdmin;
 
         lblUtente.setText("Benvenuto, " + username);
-        lblRuolo.setText(isAdmin ? "Admin - " + squadraAdmin : "Utente");
+        String ruolo = isSuperAdmin ? "Super Admin" : (isAdmin ? "Admin - " + squadraAdmin : "Utente");
+        lblRuolo.setText(ruolo);
 
         // Sort list alphabetically
         FXCollections.sort(
@@ -94,7 +97,7 @@ public class ClassificaController {
                     s.setTitle("Statistiche - " + selezionata.getNome());
                     s.setScene(new javafx.scene.Scene(pane, 700, 500));
                     StatisticheSquadraController ctrl = loader.getController();
-                    ctrl.initData(gestione, selezionata, isAdmin, squadraAdmin, s);
+                    ctrl.initData(gestione, selezionata, isAdmin, squadraAdmin, isSuperAdmin, s);
                     s.show();
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -53,7 +53,7 @@ public class RegistrazioneController {
             return;
         }
 
-        gestione.registraUtente(new Utente(username, password, false, null));
+        gestione.registraUtente(new Utente(username, password, false, null, false));
         lblSuccesso.setText("Registrazione completata! Puoi ora fare il login.");
         txtUsername.clear();
         txtPassword.clear();
