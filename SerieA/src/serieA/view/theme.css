@@ -1,0 +1,40 @@
+/* Serie A theme palette (inspired by official Serie A brand) */
+/* Primary colors */
+/* Blu scuro di sfondo */
+.root-bg { -fx-background-color: #0b2545; }
+.panel-bg { -fx-background-color: #0f3860; }
+.card-bg { -fx-background-color: #11273f; }
+
+/* Accent */
+.accent { -fx-background-color: #00a1e4; -fx-text-fill: white; }
+.accent-strong { -fx-background-color: #e94560; -fx-text-fill: white; }
+
+/* Success / danger */
+.success { -fx-background-color: #2d8a4e; -fx-text-fill: white; }
+.danger  { -fx-background-color: #c0392b; -fx-text-fill: white; }
+
+/* Text colors */
+.muted { -fx-text-fill: #9aa9c7; }
+.primary-text { -fx-text-fill: white; }
+.highlight { -fx-text-fill: #00a1e4; }
+.gold { -fx-text-fill: #f0c040; }
+.error { -fx-text-fill: #ff6b6b; }
+
+/* Common controls */
+.btn { -fx-background-radius: 8; -fx-padding: 8 16 8 16; -fx-font-weight: bold; -fx-cursor: hand; }
+.btn-accent { -fx-background-color: #00a1e4; -fx-text-fill: white; }
+.btn-strong { -fx-background-color: #e94560; -fx-text-fill: white; }
+.btn-ghost { -fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #9aa9c7; }
+
+.card { -fx-background-color: #11273f; -fx-padding: 16; -fx-background-radius: 10; }
+.input { -fx-background-color: #081427; -fx-text-fill: white; -fx-prompt-text-fill: #666; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 8; }
+.input-rounded { -fx-border-color: #e94560; -fx-border-radius: 20; -fx-background-radius: 20; }
+
+.table { -fx-background-color: #11273f; -fx-table-cell-border-color: transparent; }
+
+/* Small helpers */
+.pad-vertical { -fx-padding: 10 20 10 20; }
+.header { -fx-font-weight: bold; }
+
+/* Fallback for inline borders used in FXML */
+.boxed { -fx-border-color: #333; -fx-border-radius: 6; -fx-background-radius: 6; }
