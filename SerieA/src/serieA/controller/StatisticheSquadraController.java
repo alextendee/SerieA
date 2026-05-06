@@ -52,7 +52,8 @@ public class StatisticheSquadraController {
             javafx.scene.layout.AnchorPane pane = loader.load();
             Stage s = new Stage();
             s.setTitle("Rosa - " + squadra.getNome());
-            s.setScene(new javafx.scene.Scene(pane, 900, 600));
+            s.setScene(new javafx.scene.Scene(pane));
+            s.sizeToScene();
             serieA.controller.RosaController ctrl = loader.getController();
             ctrl.initData(gestione, squadra, isAdmin, squadraAdmin, isSuperAdmin, s);
             stage.close();
@@ -69,7 +70,8 @@ public class StatisticheSquadraController {
             javafx.scene.layout.AnchorPane pane = loader.load();
             Stage s = new Stage();
             s.setTitle("Storico Trasferimenti - " + squadra.getNome());
-            s.setScene(new javafx.scene.Scene(pane, 850, 550));
+            s.setScene(new javafx.scene.Scene(pane));
+            s.sizeToScene();
             serieA.controller.StoricoTrasferimentiController ctrl = loader.getController();
             ctrl.setMain(gestione, squadra, s);
             s.show();
@@ -85,7 +87,8 @@ public class StatisticheSquadraController {
             javafx.scene.layout.AnchorPane pane = loader.load();
             Stage s = new Stage();
             s.setTitle("Bilancio - " + squadra.getNome());
-            s.setScene(new javafx.scene.Scene(pane, 600, 450));
+            s.setScene(new javafx.scene.Scene(pane));
+            s.sizeToScene();
             serieA.controller.BilancioController ctrl = loader.getController();
             ctrl.setMain(gestione, squadra, s);
             s.show();

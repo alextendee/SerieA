@@ -3,6 +3,7 @@ package serieA.model;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import java.time.LocalDate;
 
 public class Squadra {
     private StringProperty nome;
@@ -74,7 +75,7 @@ public class Squadra {
     public void rimuoviGiocatore(Giocatore g) { rosa.remove(g); }
 
     public void registraVendita(String nomeGiocatore, String squadraAcquirente, double importo) {
-        java.time.LocalDate oggi = java.time.LocalDate.now();
+        LocalDate oggi = LocalDate.now();
         storicoTrasferimenti.add(new Trasferimento(nomeGiocatore, this.getNome(),
                 squadraAcquirente, importo, oggi.toString()));
         entrate.set(entrate.get() + importo);
@@ -82,7 +83,7 @@ public class Squadra {
     }
 
     public void registraAcquisto(String nomeGiocatore, String squadraVenditrice, double importo) {
-        java.time.LocalDate oggi = java.time.LocalDate.now();
+        LocalDate oggi = LocalDate.now();
         storicoTrasferimenti.add(new Trasferimento(nomeGiocatore, squadraVenditrice,
                 this.getNome(), importo, oggi.toString()));
         uscite.set(uscite.get() + importo);

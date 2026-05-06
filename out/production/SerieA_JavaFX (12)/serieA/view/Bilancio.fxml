@@ -7,53 +7,46 @@
             xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="serieA.controller.BilancioController"
-            style="-fx-background-color:#1a1a2e;">
+            stylesheets="/serieA/view/theme.css"
+            styleClass="root-bg">
 
     <VBox spacing="20" alignment="CENTER"
           AnchorPane.topAnchor="30" AnchorPane.bottomAnchor="30"
           AnchorPane.leftAnchor="60" AnchorPane.rightAnchor="60">
 
-        <Label text="Bilancio" style="-fx-font-size:14; -fx-text-fill:#888;"/>
-        <Label fx:id="lblSquadra" text=""
-               style="-fx-font-size:26; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
+        <Label text="Bilancio" styleClass="muted" style="-fx-font-size:14;"/>
+        <Label fx:id="lblSquadra" text="" styleClass="accent-strong" style="-fx-font-size:26; -fx-font-weight:bold;"/>
 
-        <VBox spacing="12" style="-fx-background-color:#16213e; -fx-padding:25; -fx-background-radius:10;">
+        <VBox spacing="12" styleClass="card">
             <HBox spacing="20">
                 <Label text="Bilancio iniziale:" prefWidth="180"
-                       style="-fx-text-fill:#aaa; -fx-font-size:14;"/>
-                <Label fx:id="lblBilancioIniziale" text=""
-                       style="-fx-text-fill:white; -fx-font-size:14; -fx-font-weight:bold;"/>
+                        styleClass="muted" style="-fx-font-size:14;"/>
+                 <Label fx:id="lblBilancioIniziale" text="" styleClass="primary-text" style="-fx-font-size:14; -fx-font-weight:bold;"/>
             </HBox>
             <HBox spacing="20">
                 <Label text="Entrate (vendite):" prefWidth="180"
-                       style="-fx-text-fill:#6bff9e; -fx-font-size:14;"/>
-                <Label fx:id="lblEntrate" text=""
-                       style="-fx-text-fill:#6bff9e; -fx-font-size:14; -fx-font-weight:bold;"/>
+                        styleClass="success" style="-fx-font-size:14;"/>
+                 <Label fx:id="lblEntrate" text="" styleClass="success" style="-fx-font-size:14; -fx-font-weight:bold;"/>
             </HBox>
             <HBox spacing="20">
                 <Label text="Uscite (acquisti):" prefWidth="180"
-                       style="-fx-text-fill:#ff6b6b; -fx-font-size:14;"/>
-                <Label fx:id="lblUscite" text=""
-                       style="-fx-text-fill:#ff6b6b; -fx-font-size:14; -fx-font-weight:bold;"/>
+                        styleClass="error" style="-fx-font-size:14;"/>
+                 <Label fx:id="lblUscite" text="" styleClass="error" style="-fx-font-size:14; -fx-font-weight:bold;"/>
             </HBox>
             <Separator style="-fx-background-color:#444;"/>
             <HBox spacing="20">
                 <Label text="Saldo trasferimenti:" prefWidth="180"
-                       style="-fx-text-fill:#aaa; -fx-font-size:14;"/>
-                <Label fx:id="lblSaldo" text=""
-                       style="-fx-text-fill:white; -fx-font-size:14; -fx-font-weight:bold;"/>
+                        styleClass="muted" style="-fx-font-size:14;"/>
+                 <Label fx:id="lblSaldo" text="" styleClass="primary-text" style="-fx-font-size:14; -fx-font-weight:bold;"/>
             </HBox>
             <HBox spacing="20">
-                <Label text="Bilancio corrente:" prefWidth="180"
-                       style="-fx-text-fill:#f0c040; -fx-font-size:16; -fx-font-weight:bold;"/>
-                <Label fx:id="lblBilancioCorrente" text=""
-                       style="-fx-text-fill:#f0c040; -fx-font-size:16; -fx-font-weight:bold;"/>
+                <Label text="Bilancio corrente:" prefWidth="180" styleClass="gold" style="-fx-font-size:16; -fx-font-weight:bold;"/>
+                <Label fx:id="lblBilancioCorrente" text="" styleClass="gold" style="-fx-font-size:16; -fx-font-weight:bold;"/>
             </HBox>
         </VBox>
 
         <Label fx:id="lblStatoDebito" text="" style="-fx-font-size:16;"/>
 
-        <Button text="Chiudi" onAction="#handleChiudi"
-                style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-background-radius:8; -fx-padding:10 30 10 30; -fx-cursor:hand; -fx-font-size:13;"/>
+        <Button text="Chiudi" onAction="#handleChiudi" styleClass="btn btn-strong" style="-fx-padding:10 30 10 30; -fx-font-size:13;"/>
     </VBox>
 </AnchorPane>

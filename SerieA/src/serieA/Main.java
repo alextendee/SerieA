@@ -16,7 +16,11 @@ public class Main extends Application {
         gestione = new Gestione();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/serieA/view/Login.fxml"));
         AnchorPane pane = loader.load();
-        primaryStage.setScene(new Scene(pane, 450, 430));
+        // Create scene without forcing width/height so we can size the stage to the FXML's preferred sizes
+        Scene scene = new Scene(pane);
+        primaryStage.setScene(scene);
+        // Ensure the window fits the loaded FXML content
+        primaryStage.sizeToScene();
         primaryStage.setTitle("Serie A Manager - Login");
         LoginController ctrl = loader.getController();
         ctrl.initData(gestione);

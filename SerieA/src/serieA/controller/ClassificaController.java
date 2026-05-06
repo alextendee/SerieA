@@ -12,6 +12,8 @@ import serieA.model.Gestione;
 import serieA.model.Squadra;
 
 import java.util.Comparator;
+import java.util.Arrays;
+import java.net.URL;
 
 public class ClassificaController {
     @FXML private TableView<Squadra> tabellaClassifica;
@@ -68,7 +70,7 @@ public class ClassificaController {
             protected void updateItem(String nome, boolean empty) {
                 super.updateItem(nome, empty);
                 if (empty || nome == null) { setGraphic(null); return; }
-                java.net.URL url = getClass().getResource(
+                URL url = getClass().getResource(
                         "/serieA/loghi/" + nome.toLowerCase() + ".png");
                 if (url != null) imageView.setImage(new Image(url.toExternalForm()));
                 setGraphic(url != null ? imageView : null);
@@ -85,7 +87,7 @@ public class ClassificaController {
         colGS.setCellValueFactory(c -> c.getValue().golSubitiProperty());
 
         // Center numeric columns
-        for (TableColumn<Squadra, Number> col : java.util.Arrays.asList(
+        for (TableColumn<Squadra, Number> col : Arrays.asList(
                 colPunti, colPG, colPV, colPP, colPL, colGF, colGS)) {
             col.setCellFactory(tc -> new TableCell<Squadra, Number>() {
                 @Override
@@ -108,12 +110,13 @@ public class ClassificaController {
                 // Load Statistiche view
                 try {
                     FXMLLoader loader = new FXMLLoader();
-                    java.net.URL url = getClass().getResource("/serieA/view/StatisticheSquadra.fxml");
+                    URL url = getClass().getResource("/serieA/view/StatisticheSquadra.fxml");
                     loader.setLocation(url);
                     AnchorPane pane = loader.load();
                     Stage s = new Stage();
                     s.setTitle("Statistiche - " + selezionata.getNome());
-                    s.setScene(new javafx.scene.Scene(pane, 700, 500));
+                    s.setScene(new javafx.scene.Scene(pane));
+                    s.sizeToScene();
                     StatisticheSquadraController ctrl = loader.getController();
                     ctrl.initData(gestione, selezionata, isAdmin, squadraAdmin, isSuperAdmin, s);
                     s.show();
@@ -128,11 +131,12 @@ public class ClassificaController {
     private void handleLogout() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            java.net.URL url = getClass().getResource("/serieA/view/Login.fxml");
+            URL url = getClass().getResource("/serieA/view/Login.fxml");
             loader.setLocation(url);
             AnchorPane pane = loader.load();
             Stage stage = (Stage) lblUtente.getScene().getWindow();
-            stage.setScene(new javafx.scene.Scene(pane, 450, 430));
+            stage.setScene(new javafx.scene.Scene(pane));
+            stage.sizeToScene();
             LoginController ctrl = loader.getController();
             ctrl.initData(gestione);
         } catch (Exception e) {

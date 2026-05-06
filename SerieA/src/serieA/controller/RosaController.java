@@ -61,7 +61,8 @@ public class RosaController {
                     javafx.scene.layout.AnchorPane pane = loader.load();
                     Stage s = new Stage();
                     s.setTitle("Giocatore - " + selezionato.getNome() + " " + selezionato.getCognome());
-                    s.setScene(new javafx.scene.Scene(pane, 700, 550));
+                    s.setScene(new javafx.scene.Scene(pane));
+                    s.sizeToScene();
                     serieA.controller.DettaglioGiocatoreController ctrl = loader.getController();
                     ctrl.initData(gestione, selezionato, squadra, isAdmin, squadraAdmin, isSuperAdmin, s);
                     s.show();

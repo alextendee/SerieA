@@ -7,33 +7,31 @@
             xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="serieA.controller.DettaglioGiocatoreController"
-            style="-fx-background-color:#1a1a2e;">
+            stylesheets="/serieA/view/theme.css"
+            styleClass="root-bg">
 
     <VBox spacing="18" alignment="CENTER"
           AnchorPane.topAnchor="30" AnchorPane.bottomAnchor="30"
           AnchorPane.leftAnchor="60" AnchorPane.rightAnchor="60">
 
-        <Label text="Scheda Giocatore" style="-fx-font-size:14; -fx-text-fill:#888;"/>
-        <Label fx:id="lblNomeCompleto" text=""
-               style="-fx-font-size:28; -fx-font-weight:bold; -fx-text-fill:#e94560;"/>
-        <Label fx:id="lblSquadra" text=""
-               style="-fx-font-size:14; -fx-text-fill:#a0a0ff;"/>
+        <Label text="Scheda Giocatore" styleClass="muted" style="-fx-font-size:14;"/>
+        <Label fx:id="lblNomeCompleto" text="" style="-fx-font-size:28; -fx-font-weight:bold;" styleClass="accent-strong"/>
+        <Label fx:id="lblSquadra" text="" styleClass="highlight" style="-fx-font-size:14;"/>
 
         <!-- Info grid -->
-        <VBox spacing="10" style="-fx-background-color:#16213e; -fx-padding:20; -fx-background-radius:10;">
+        <VBox spacing="10" styleClass="card">
             <Label text="Informazioni Personali"
-                   style="-fx-text-fill:#e94560; -fx-font-weight:bold; -fx-font-size:13;"/>
+                   styleClass="accent-strong" style="-fx-font-weight:bold; -fx-font-size:13;"/>
             <HBox spacing="40">
                 <VBox spacing="8">
-                    <Label fx:id="lblNazionalita" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
-                    <Label fx:id="lblEta" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
-                    <Label fx:id="lblAltezza" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
+                     <Label fx:id="lblNazionalita" text="" styleClass="muted" style="-fx-font-size:13;"/>
+                     <Label fx:id="lblEta" text="" styleClass="muted" style="-fx-font-size:13;"/>
+                     <Label fx:id="lblAltezza" text="" styleClass="muted" style="-fx-font-size:13;"/>
                 </VBox>
                 <VBox spacing="8">
-                    <Label fx:id="lblGol" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
-                    <Label fx:id="lblAssist" text="" style="-fx-text-fill:#ccc; -fx-font-size:13;"/>
-                    <Label fx:id="lblValore" text=""
-                           style="-fx-text-fill:#f0c040; -fx-font-size:14; -fx-font-weight:bold;"/>
+                     <Label fx:id="lblGol" text="" styleClass="muted" style="-fx-font-size:13;"/>
+                     <Label fx:id="lblAssist" text="" styleClass="muted" style="-fx-font-size:13;"/>
+                     <Label fx:id="lblValore" text="" styleClass="gold" style="-fx-font-size:14; -fx-font-weight:bold;"/>
                 </VBox>
             </HBox>
         </VBox>
@@ -42,13 +40,12 @@
         <HBox spacing="20" alignment="CENTER">
             <Button fx:id="btnCompra" text="COMPRA" onAction="#handleCompra"
                     prefWidth="160"
-                    style="-fx-background-color:#2d8a4e; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:14; -fx-cursor:hand;"/>
+                    styleClass="btn success" style="-fx-font-size:14; -fx-padding:12;"/>
             <Button fx:id="btnVendi" text="VENDI" onAction="#handleVendi"
                     prefWidth="160"
-                    style="-fx-background-color:#c0392b; -fx-text-fill:white; -fx-font-weight:bold; -fx-background-radius:8; -fx-padding:12; -fx-font-size:14; -fx-cursor:hand;"/>
+                    styleClass="btn danger" style="-fx-font-size:14; -fx-padding:12;"/>
         </HBox>
 
-        <Button text="Chiudi" onAction="#handleChiudi"
-                style="-fx-background-color:transparent; -fx-text-fill:#888; -fx-border-color:#555; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8 30 8 30; -fx-cursor:hand;"/>
+        <Button text="Chiudi" onAction="#handleChiudi" styleClass="btn-ghost" style="-fx-border-color:#555; -fx-border-radius:6; -fx-background-radius:6; -fx-padding:8 30 8 30;"/>
     </VBox>
 </AnchorPane>

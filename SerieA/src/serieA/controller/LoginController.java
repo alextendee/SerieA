@@ -7,6 +7,8 @@ import serieA.model.Gestione;
 import serieA.model.Utente;
 
 import java.util.Optional;
+import java.io.IOException;
+import java.net.URL;
 
 public class LoginController {
     @FXML private TextField txtUsername;
@@ -22,10 +24,10 @@ public class LoginController {
     }
 
     // Helper to load fxml for this controller
-    private FXMLLoader caricaFxml(String nomefile) throws java.io.IOException {
+    private FXMLLoader caricaFxml(String nomefile) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        java.net.URL url = getClass().getResource("/serieA/view/" + nomefile);
-        if (url == null) throw new java.io.IOException("File FXML non trovato: view/" + nomefile);
+        URL url = getClass().getResource("/serieA/view/" + nomefile);
+        if (url == null) throw new IOException("File FXML non trovato: view/" + nomefile);
         loader.setLocation(url);
         return loader;
     }
@@ -53,7 +55,9 @@ public class LoginController {
                 FXMLLoader loader = caricaFxml("Classifica.fxml");
                 javafx.scene.layout.AnchorPane pane = loader.load();
                 javafx.stage.Stage stage = (javafx.stage.Stage) txtUsername.getScene().getWindow();
-                stage.setScene(new javafx.scene.Scene(pane, 1000, 650));
+                stage.setScene(new javafx.scene.Scene(pane));
+                // Resize the stage to the content so no UI is cut off
+                stage.sizeToScene();
                 stage.setTitle("Serie A - Classifica");
                 serieA.controller.ClassificaController ctrl = loader.getController();
                 ctrl.initData(gestione, u.getUsername(), u.isAdmin(), u.getSquadraAmministrata(), u.isSuperAdmin(), stage);
@@ -73,7 +77,8 @@ public class LoginController {
             javafx.scene.layout.AnchorPane pane = loader.load();
             javafx.stage.Stage stage = new javafx.stage.Stage();
             stage.setTitle("Registrazione Nuovo Utente");
-            stage.setScene(new javafx.scene.Scene(pane, 450, 420));
+            stage.setScene(new javafx.scene.Scene(pane));
+            stage.sizeToScene();
             serieA.controller.RegistrazioneController ctrl = loader.getController();
             ctrl.initData(gestione, stage);
             stage.show();

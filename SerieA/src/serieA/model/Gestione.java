@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.Optional;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Gestione {
 
@@ -187,13 +189,16 @@ public class Gestione {
     }
 
     public Squadra getSquadraByNome(String nome) {
-        return squadre.stream()
-                .filter(s -> s.getNome().equals(nome))
-                .findFirst().orElse(null);
+        for (Squadra s : squadre) {
+            if (s.getNome().equals(nome)) {
+                return s;
+            }
+        }
+        return null;
     }
 
     public Squadra getSquadraRandom(String escludi) {
-        java.util.List<Squadra> altre = new java.util.ArrayList<>(squadre);
+        List<Squadra> altre = new ArrayList<>(squadre);
         altre.removeIf(s -> s.getNome().equals(escludi));
         if (altre.isEmpty()) return null;
         return altre.get((int) (Math.random() * altre.size()));
@@ -201,8 +206,8 @@ public class Gestione {
 
     public boolean offertaAccettata(double offerta, double valore, boolean venditoreInDebito) {
         if (offerta < valore) return false;
-        double ratio = offerta / valore;
-        double prob  = 0.20 + (ratio - 1.0) * 0.75;
+        double rapporto = offerta / valore;
+        double prob  = 0.20 + (rapporto - 1.0) * 0.75;
         prob = Math.min(prob, 0.95);
         if (venditoreInDebito) prob = Math.min(prob + 0.20, 1.0);
         return Math.random() < prob;
@@ -244,14 +249,16 @@ public class Gestione {
 
     /** Aggiunge in append l'ultimo trasferimento a trasferimenti.csv */
     private void salvaTrasferimenti() {
-        java.util.LinkedHashSet<String> righe = new java.util.LinkedHashSet<>();
+        List<String> righe = new ArrayList<>();
         for (Squadra s : squadre) {
             for (Trasferimento t : s.getStoricoTrasferimenti()) {
-                righe.add(t.getGiocatore() + ","
+                String line = t.getGiocatore() + ","
                         + t.getSquadraProvenienza() + ","
                         + t.getSquadraDestinazione() + ","
                         + t.getImporto() + ","
-                        + t.getData());
+                        + t.getData();
+                // Mantieni ordine e evita duplicati (comportamento simile a LinkedHashSet)
+                if (!righe.contains(line)) righe.add(line);
             }
         }
         File f = csvFile("trasferimenti.csv");
