@@ -9,6 +9,8 @@ Atalanta,Giorgio,Scalvini,Italia,22,191,2,2,35.0
 Atalanta,Berat,Djimsiti,Albania,31,187,1,0,14.0
 Atalanta,Juan,Cuadrado,Colombia,37,176,1,4,3.0
 Atalanta,Marco,Carnesecchi,Italia,25,190,0,0,28.0
+Atalanta,Raoul,Bellanova,Italia,25,188,1,9,35.0
+Atalanta,Ederson,Dos Santos,Brasile,25,183,4,3,45.0
 Bologna,Santiago,Castro,Argentina,20,178,8,6,18.0
 Bologna,Riccardo,Orsolini,Italia,28,175,15,7,22.0
 Bologna,Dan,Ndoye,Svizzera,24,181,8,9,30.0
@@ -19,6 +21,8 @@ Bologna,Jhon,Lucumi,Colombia,27,189,1,0,12.0
 Bologna,Sam,Beukema,Olanda,27,193,2,1,20.0
 Bologna,Stefan,Posch,Austria,27,184,1,3,12.0
 Bologna,Lukasz,Skorupski,Polonia,33,188,0,0,8.0
+Bologna,Jesper,Karlsson,Svezia,26,179,2,2,10.0
+Bologna,Giovanni,Fabbian,Italia,22,186,5,2,18.0
 Cagliari,Gianluca,Lapadula,Italia,34,179,10,3,5.0
 Cagliari,Nadir,Zortea,Italia,24,177,3,6,8.0
 Cagliari,Razvan,Marin,Romania,29,178,5,6,10.0
@@ -29,6 +33,11 @@ Cagliari,Yerry,Mina,Colombia,30,197,1,0,4.0
 Cagliari,Zito,Luvumbo,Angola,23,187,5,4,10.0
 Cagliari,Luvumbo,Augello,Italia,28,180,2,4,5.0
 Cagliari,Simone,Scuffet,Italia,29,187,0,0,8.0
+Cagliari,Nicolas,Viola,Italia,35,180,4,4,1.5
+Cagliari,Gianluca,Gaetano,Italia,25,183,5,3,8.0
+Cagliari,Antoine,Makoumbou,Congo,26,183,1,1,6.0
+Cagliari,Sebastiano,Luperto,Italia,28,191,1,2,7.0
+Cagliari,Adam,Obert,Slovacchia,22,186,0,1,4.0
 Como,Nico,Paz,Argentina,21,177,8,11,35.0
 Como,Assane,Diao,Senegal,21,183,8,4,20.0
 Como,Andrea,Belotti,Italia,31,181,7,3,8.0
@@ -39,6 +48,8 @@ Como,Patrick,Cutrone,Italia,28,180,4,2,5.0
 Como,Sergi,Roberto,Spagna,33,177,0,4,3.0
 Como,Yannis,Smolcic,Croazia,22,188,1,2,8.0
 Como,Emil,Audero,Italia,28,193,0,0,8.0
+Como,Alberto,Moreno,Spagna,32,171,0,3,2.0
+Como,Ali,Jasim,Iraq,21,178,2,2,5.0
 Empoli,Sebastiano,Esposito,Italia,22,181,5,4,10.0
 Empoli,Jacopo,Fazzini,Italia,23,181,4,7,12.0
 Empoli,Pietro,Pellegri,Italia,24,185,5,3,6.0
@@ -49,6 +60,8 @@ Empoli,Szymon,Zurkowski,Polonia,27,187,2,3,5.0
 Empoli,Emmanuel,Ekong,Nigeria,24,190,1,0,5.0
 Empoli,Tyronne,Ebuehi,Olanda,28,182,1,4,5.0
 Empoli,Devis,Vasquez,Colombia,26,196,0,0,5.0
+Empoli,Lorenzo,Henderson,Scozia,29,175,1,3,3.0
+Empoli,Faustino,Anjorin,Inghilterra,23,185,2,2,5.0
 Fiorentina,Moise,Kean,Italia,25,181,19,5,35.0
 Fiorentina,Albert,Gudmundsson,Islanda,27,181,9,7,35.0
 Fiorentina,Yacine,Adli,Francia,25,183,5,9,20.0
@@ -59,6 +72,8 @@ Fiorentina,Danilo,Cataldi,Italia,31,178,2,4,10.0
 Fiorentina,Lucas,Martinez Quarta,Argentina,29,187,3,1,18.0
 Fiorentina,Cristiano,Biraghi,Italia,32,182,1,5,8.0
 Fiorentina,David,De Gea,Spagna,34,193,0,0,8.0
+Fiorentina,Andrea,Colpani,Italia,26,184,6,4,20.0
+Fiorentina,Edoardo,Bove,Italia,23,179,2,3,15.0
 Genoa,Milan,Djuric,Bosnia,35,200,8,3,5.0
 Genoa,Vitinha,Vitinha,Portogallo,24,170,6,5,12.0
 Genoa,Ruslan,Malinovskyi,Ucraina,32,186,4,6,8.0
@@ -69,6 +84,8 @@ Genoa,Massimo,Vasquez,Svizzera,20,182,1,3,8.0
 Genoa,Johan,Vasquez,Messico,26,186,2,0,8.0
 Genoa,Alessandro,Vogliacco,Italia,27,188,2,0,7.0
 Genoa,Filip,Otoa,Svizzera,20,186,0,0,5.0
+Genoa,Jeff,Ekhator,Italia,19,188,3,2,6.0
+Genoa,Andrea,Pinamonti,Italia,26,188,10,1,18.0
 Inter,Lautaro,Martinez,Argentina,27,174,21,8,95.0
 Inter,Marcus,Thuram,Francia,27,188,15,10,75.0
 Inter,Nicolo,Barella,Italia,28,172,7,12,80.0
@@ -79,6 +96,8 @@ Inter,Piotr,Zielinski,Polonia,31,181,5,7,20.0
 Inter,Mehdi,Taremi,Iran,33,187,8,6,12.0
 Inter,Yann,Sommer,Svizzera,36,183,0,0,10.0
 Inter,Stefan,De Vrij,Olanda,33,188,2,1,12.0
+Inter,Benjamin,Pavard,Francia,29,186,0,2,45.0
+Inter,Matteo,Darmian,Italia,35,182,1,2,5.0
 Juventus,Dusan,Vlahovic,Serbia,25,190,14,3,75.0
 Juventus,Francisco,Conceicao,Portogallo,22,178,10,8,45.0
 Juventus,Kenan,Yildiz,Turchia,20,182,9,8,55.0
@@ -88,6 +107,9 @@ Juventus,Gleison,Bremer,Brasile,28,187,0,0,40.0
 Juventus,Pierre,Kalulu,Francia,25,183,1,1,30.0
 Juventus,Andrea,Cambiaso,Italia,25,180,3,7,50.0
 Juventus,Weston,McKennie,USA,27,181,3,4,18.0
+Juventus,Timothy,Weah,USA,25,183,5,3,15.0
+Juventus,Teun,Koopmeiners,Olanda,27,183,3,6,50.0
+Juventus,Douglas,Luiz,Brasile,27,177,1,2,40.0
 Lazio,Taty,Castellanos,Argentina,27,183,13,4,20.0
 Lazio,Mattia,Zaccagni,Italia,30,173,12,9,28.0
 Lazio,Boulaye,Dia,Senegal,28,181,12,6,25.0
@@ -98,6 +120,8 @@ Lazio,Mario,Gila,Spagna,24,186,2,1,22.0
 Lazio,Alessio,Romagnoli,Italia,30,185,1,1,12.0
 Lazio,Adam,Marusic,Montenegro,33,183,2,5,8.0
 Lazio,Ivan,Provedel,Italia,31,195,0,0,15.0
+Lazio,Nuno,Tavares,Portogallo,25,183,0,10,20.0
+Lazio,Matteo,Guendouzi,Francia,26,185,3,4,30.0
 Lecce,Nikola,Krstovic,Montenegro,24,190,10,3,12.0
 Lecce,Santiago,Pierotti,Argentina,27,178,5,7,8.0
 Lecce,Lassana,Coulibaly,Mali,27,185,2,3,6.0
@@ -109,6 +133,11 @@ Lecce,Wladimiro,Falcone,Italia,28,194,0,0,8.0
 Lecce,Ardian,Ismajli,Albania,28,187,1,0,8.0
 Lecce,Lorenzo,Dorgu,Danimarca,21,181,2,5,30.0
 Lecce,Michele,Di Gregorio,Italia,27,192,0,0,22.0
+Lecce,Ante,Rebic,Croazia,31,185,4,2,3.0
+Lecce,Patrick,Dorgu,Danimarca,20,185,5,4,25.0
+Lecce,Ylber,Ramadani,Albania,29,185,1,1,6.0
+Lecce,Kialonda,Gaspar,Angola,27,193,2,0,9.0
+Lecce,Federico,Baschirotto,Italia,28,187,1,0,6.0
 Milan,Rafael,Leao,Portogallo,26,188,10,8,75.0
 Milan,Alvaro,Morata,Spagna,33,190,8,6,12.0
 Milan,Tijjani,Reijnders,Olanda,27,182,11,8,55.0
@@ -119,6 +148,8 @@ Milan,Matteo,Gabbia,Italia,25,191,2,0,12.0
 Milan,Fikayo,Tomori,Inghilterra,27,185,1,0,35.0
 Milan,Yunus,Musah,USA,23,178,2,4,18.0
 Milan,Mike,Maignan,Francia,29,191,0,0,55.0
+Milan,Youssouf,Fofana,Francia,26,185,2,2,35.0
+Milan,Emerson,Royal,Brasile,26,183,0,2,15.0
 Monza,Dany,Mota,Portogallo,26,172,5,3,8.0
 Monza,Patrick,Ciurria,Italia,29,180,3,5,6.0
 Monza,Gianluca,Caprari,Italia,31,172,4,4,5.0
@@ -129,6 +160,8 @@ Monza,Andrea,Carboni,Italia,23,182,1,1,8.0
 Monza,Pablo,Mari,Spagna,32,194,0,0,5.0
 Monza,Pedro,Pereira,Portogallo,27,175,1,3,6.0
 Monza,Stefano,Turati,Italia,24,192,0,0,6.0
+Monza,Matteo,Pessina,Italia,28,187,3,3,12.0
+Monza,Alessandro,Bianco,Italia,22,173,1,1,6.0
 Napoli,Victor,Osimhen,Nigeria,26,185,0,0,130.0
 Napoli,Khvicha,Kvaratskhelia,Georgia,24,183,11,8,80.0
 Napoli,Romelu,Lukaku,Belgio,32,191,14,6,30.0
@@ -139,6 +172,8 @@ Napoli,Giovanni,Di Lorenzo,Italia,32,183,3,7,18.0
 Napoli,Alessandro,Buongiorno,Italia,25,190,1,1,40.0
 Napoli,Amir,Rrahmani,Kosovo,30,190,2,0,18.0
 Napoli,Alex,Meret,Italia,28,190,0,0,18.0
+Napoli,Pasquale,Mazzocchi,Italia,29,183,0,2,8.0
+Napoli,Billy,Gilmour,Scozia,23,170,0,1,18.0
 Parma,Valentin,Mihaila,Romania,25,179,5,4,8.0
 Parma,Ange-Yoan,Bonny,Francia,22,182,5,3,8.0
 Parma,Simon,Sohm,Svizzera,23,183,4,5,12.0
@@ -149,6 +184,8 @@ Parma,Botond,Balogh,Ungheria,25,188,1,1,8.0
 Parma,Adriano,Cittadini,Italia,26,181,0,2,5.0
 Parma,Emanuele,Valeri,Italia,29,183,2,4,5.0
 Parma,Zion,Suzuki,Giappone,22,189,0,0,5.0
+Parma,Dennis,Man,Romania,26,183,8,6,15.0
+Parma,Bernabé,Adrian,Spagna,23,170,3,4,15.0
 Roma,Artem,Dovbyk,Ucraina,28,194,16,5,38.0
 Roma,Matias,Soule,Argentina,22,179,9,7,35.0
 Roma,Paulo,Dybala,Argentina,31,177,6,7,22.0
@@ -159,6 +196,8 @@ Roma,Mats,Hummels,Germania,36,191,1,0,5.0
 Roma,Gianluca,Mancini,Italia,29,189,2,1,18.0
 Roma,Angelino,Angelino,Spagna,28,173,3,8,25.0
 Roma,Mile,Svilar,Belgio,26,193,0,0,20.0
+Roma,Manu,Koné,Francia,24,185,2,1,25.0
+Roma,Evan,Ndicka,Costa d'Avorio,25,192,0,1,25.0
 Torino,Borna,Sosa,Croazia,27,181,3,9,15.0
 Torino,Antonio,Sanabria,Paraguay,29,183,9,3,10.0
 Torino,Adams,Che,USA,29,180,3,5,8.0
@@ -169,6 +208,8 @@ Torino,Alessandro,Buongiorno,Italia,25,190,0,0,40.0
 Torino,Perr,Schuurs,Olanda,25,191,0,0,20.0
 Torino,Mergim,Vojvoda,Kosovo,29,180,2,4,8.0
 Torino,Vanja,Milinkovic-Savic,Serbia,28,202,0,0,12.0
+Torino,Saul,Coco,Guinea Equatoriale,26,187,2,0,14.0
+Torino,Marcus,Pedersen,Norvegia,24,178,0,3,7.0
 Udinese,Lorenzo,Lucca,Italia,24,196,13,4,18.0
 Udinese,Alexis,Sanchez,Cile,36,169,3,4,2.0
 Udinese,Lazar,Samardzic,Serbia,23,183,5,8,25.0
@@ -179,6 +220,16 @@ Udinese,Oumar,Solet,Francia,24,192,1,0,12.0
 Udinese,Jordan,Zemura,Zimbabwe,27,175,2,4,6.0
 Udinese,Hassane,Kamara,Costa d'Avorio,31,175,1,3,4.0
 Udinese,Maduka,Okoye,Nigeria,25,199,0,0,10.0
+Udinese,Keinan,Davis,Inghilterra,33,191,10,3,4.0
+Udinese,Jurgen,Ekkelenkamp,Olanda,25,188,5,3,7.5
+Udinese,Arthur,Atta,Francia,22,189,5,3,7.5
+Udinese,Nicolò,Zaniolo,Italia,25,190,3,6,12.0
+Udinese,Jesper,Karlström,Svezia,29,185,1,2,4.0
+Udinese,Kingsley,Ehizibue,Nigeria,30,189,0,3,2.5
+Udinese,Saba,Goglichidze,Georgia,21,193,0,1,8.5
+Udinese,Thomas,Kristensen,Danimarca,23,198,1,0,6.0
+Udinese,Christian,Kabasele,Belgio,34,187,1,0,0.8
+Udinese,Răzvan,Sava,Romania,22,197,0,0,2.5
 Venezia,Joel,Pohjanpalo,Finlandia,30,184,12,3,12.0
 Venezia,Hans,Nicolussi Caviglia,Italia,24,183,4,6,10.0
 Venezia,Gaetano,Oristanio,Italia,23,176,3,4,8.0
@@ -189,6 +240,16 @@ Venezia,Michael,Cuisance,Francia,25,178,1,3,4.0
 Venezia,Isak,Hien,Svezia,25,191,1,0,8.0
 Venezia,Antonio,Candela,Italia,25,184,1,2,5.0
 Venezia,Jessie,Joronen,Finlandia,31,198,0,0,5.0
+Venezia,Christian,Gytkjaer,Danimarca,35,185,5,1,1.5
+Venezia,Gianluca,Busio,USA,23,172,3,3,10.0
+Venezia,Alfred,Duncan,Ghana,32,178,2,4,4.0
+Venezia,Francesco,Zampano,Italia,31,177,1,5,1.5
+Venezia,Mikael,Ellertsson,Islanda,23,189,2,2,3.0
+Venezia,Michael,Svoboda,Austria,26,196,1,0,3.5
+Venezia,Marin,Sverko,Croazia,27,187,0,1,3.0
+Venezia,Filip,Stankovic,Serbia,23,187,0,0,3.5
+Venezia,John,Yeboah,Ecuador,24,170,3,2,6.0
+Venezia,Magnus,Kofod Andersen,Danimarca,26,182,1,2,2.0
 Verona,Ondrej,Duda,Slovacchia,30,181,8,5,8.0
 Verona,Casper,Tengstedt,Danimarca,24,186,8,3,10.0
 Verona,Daniel,Mosquera,Colombia,24,183,5,3,8.0
@@ -199,3 +260,13 @@ Verona,Diego,Coppola,Italia,21,193,2,0,8.0
 Verona,Pau,Morer,Spagna,24,186,1,0,5.0
 Verona,Federico,Cabal,Colombia,24,183,3,4,10.0
 Verona,Lorenzo,Montipo,Italia,29,193,0,0,8.0
+Verona,Amin,Sarr,Svezia,24,188,5,2,4.0
+Verona,Dailon,Livramento,Capo Verde,24,185,4,2,3.5
+Verona,Suat,Serdar,Germania,28,183,2,4,7.0
+Verona,Reda,Belahyane,Marocco,21,174,0,3,10.0
+Verona,Jackson,Tchatchoua,Camerun,23,182,1,3,8.0
+Verona,Flavius,Daniliuc,Austria,24,188,1,0,6.0
+Verona,Giangiacomo,Magnani,Italia,29,190,1,0,3.0
+Verona,Tomas,Suslov,Slovacchia,22,172,3,5,12.0
+Verona,Martin,Frese,Danimarca,27,185,0,2,3.5
+Verona,Abdou,Harroui,Marocco,27,182,2,2,4.0
