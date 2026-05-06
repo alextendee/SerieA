@@ -52,13 +52,13 @@ public class RosaController {
         });
         tabellaRosa.setItems(filtrata);
 
-        tabellaRosa.getSelectionModel().selectedItemProperty()
-                .addListener((obs, old, newG) -> {
-                    if (newG != null) {
-                        tabellaRosa.getSelectionModel().clearSelection();
-                        main.mostraGiocatore(newG, squadra, isAdmin, squadraAdmin);
-                    }
-                });
+        tabellaRosa.setOnMouseClicked(event -> {
+            Giocatore selezionato = tabellaRosa.getSelectionModel().getSelectedItem();
+            if (selezionato != null) {
+                tabellaRosa.getSelectionModel().clearSelection();
+                main.mostraGiocatore(selezionato, squadra, isAdmin, squadraAdmin);
+            }
+        });
     }
 
     @FXML

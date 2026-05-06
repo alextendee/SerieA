@@ -79,13 +79,13 @@ public class ClassificaController {
             });
         }
 
-        tabellaClassifica.getSelectionModel().selectedItemProperty()
-                .addListener((obs, oldVal, newVal) -> {
-                    if (newVal != null) {
-                        tabellaClassifica.getSelectionModel().clearSelection();
-                        main.mostraStatisticheSquadra(newVal, isAdmin, squadraAdmin);
-                    }
-                });
+        tabellaClassifica.setOnMouseClicked(event -> {
+            Squadra selezionata = tabellaClassifica.getSelectionModel().getSelectedItem();
+            if (selezionata != null) {
+                tabellaClassifica.getSelectionModel().clearSelection();
+                main.mostraStatisticheSquadra(selezionata, isAdmin, squadraAdmin);
+            }
+        });
     }
 
     @FXML
