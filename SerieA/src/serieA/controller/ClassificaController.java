@@ -37,7 +37,7 @@ public class ClassificaController {
         lblUtente.setText("Benvenuto, " + username);
         lblRuolo.setText(isAdmin ? "Admin - " + squadraAdmin : "Utente");
 
-        // Copia la lista e ordina alfabeticamente (Java 8 compatible)
+        // Copia la lista e ordina alfabeticamente
         FXCollections.sort(
                 gestione.getSquadre(),
                 new Comparator<Squadra>() {
