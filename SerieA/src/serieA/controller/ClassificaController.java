@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import serieA.model.Gestione;
@@ -13,6 +15,7 @@ import java.util.Comparator;
 
 public class ClassificaController {
     @FXML private TableView<Squadra> tabellaClassifica;
+    @FXML private TableColumn<Squadra, String> colLogo;
     @FXML private TableColumn<Squadra, String> colNome;
     @FXML private TableColumn<Squadra, Number> colPunti;
     @FXML private TableColumn<Squadra, Number> colPG;
@@ -57,6 +60,21 @@ public class ClassificaController {
     @FXML
     private void initialize() {
         tabellaClassifica.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        colLogo.setCellValueFactory(c -> c.getValue().nomeProperty());
+        colLogo.setCellFactory(col -> new TableCell<Squadra, String>() {
+            private final ImageView imageView = new ImageView();
+            { imageView.setFitWidth(32); imageView.setFitHeight(32); imageView.setPreserveRatio(true); }
+            @Override
+            protected void updateItem(String nome, boolean empty) {
+                super.updateItem(nome, empty);
+                if (empty || nome == null) { setGraphic(null); return; }
+                java.net.URL url = getClass().getResource(
+                        "/serieA/loghi/" + nome.toLowerCase() + ".png");
+                if (url != null) imageView.setImage(new Image(url.toExternalForm()));
+                setGraphic(url != null ? imageView : null);
+                setStyle("-fx-alignment: CENTER;");
+            }
+        });
         colNome.setCellValueFactory(c -> c.getValue().nomeProperty());
         colPunti.setCellValueFactory(c -> c.getValue().puntiProperty());
         colPG.setCellValueFactory(c -> c.getValue().partiteGiocateProperty());
