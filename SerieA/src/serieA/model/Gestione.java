@@ -79,7 +79,8 @@ public class Gestione {
                 int gf        = Integer.parseInt(col[6].trim());
                 int gs        = Integer.parseInt(col[7].trim());
                 double bil    = Double.parseDouble(col[8].trim());
-                squadre.add(new Squadra(nome, punti, pg, pv, pp, pl, gf, gs, bil));
+                String logo = col[9].trim();
+                squadre.add(new Squadra(nome, punti, pg, pv, pp, pl, gf, gs, bil, logo));
             }
         } catch (IOException e) {
             System.err.println("Errore caricamento squadre.csv: " + e.getMessage());

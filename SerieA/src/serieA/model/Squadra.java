@@ -18,12 +18,13 @@ public class Squadra {
     private DoubleProperty bilancioIniziale;
     private DoubleProperty entrate;
     private DoubleProperty uscite;
+    private StringProperty logo;
 
     private ObservableList<Giocatore> rosa = FXCollections.observableArrayList();
     private ObservableList<Trasferimento> storicoTrasferimenti = FXCollections.observableArrayList();
 
     public Squadra(String nome, int punti, int pG, int pV, int pPar, int pPer,
-                   int gF, int gS, double bilancioIniziale) {
+                   int gF, int gS, double bilancioIniziale, String logo) {
         this.nome = new SimpleStringProperty(nome);
         this.punti = new SimpleIntegerProperty(punti);
         this.partiteGiocate = new SimpleIntegerProperty(pG);
@@ -36,6 +37,7 @@ public class Squadra {
         this.bilancioCorrente = new SimpleDoubleProperty(bilancioIniziale);
         this.entrate = new SimpleDoubleProperty(0);
         this.uscite = new SimpleDoubleProperty(0);
+        this.logo = new SimpleStringProperty(logo);
     }
 
     // Getters
@@ -52,6 +54,7 @@ public class Squadra {
     public double getEntrate() { return entrate.get(); }
     public double getUscite() { return uscite.get(); }
     public boolean isInDebito() { return bilancioCorrente.get() < 0; }
+    public String getLogo() { return logo.get(); }
 
     // Setters
     public void setBilancioCorrente(double v) { bilancioCorrente.set(v); }

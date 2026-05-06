@@ -7,7 +7,7 @@
 
 /* Accent */
 .accent { -fx-background-color: #00a1e4; -fx-text-fill: white; }
-.accent-strong { -fx-background-color: #e94560; -fx-text-fill: white; }
+.accent-strong { -fx-background-color: transparent; -fx-text-fill: #e94560; }
 
 /* Success / danger */
 .success { -fx-background-color: #2d8a4e; -fx-text-fill: white; }
@@ -23,7 +23,7 @@
 /* Common controls */
 .btn { -fx-background-radius: 8; -fx-padding: 8 16 8 16; -fx-font-weight: bold; -fx-cursor: hand; }
 .btn-accent { -fx-background-color: #00a1e4; -fx-text-fill: white; }
-.btn-strong { -fx-background-color: #e94560; -fx-text-fill: white; }
+.btn-strong { -fx-background-color: transparent; -fx-text-fill: #e94560; }
 .btn-ghost { -fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #9aa9c7; }
 
 .card { -fx-background-color: #11273f; -fx-padding: 16; -fx-background-radius: 10; }

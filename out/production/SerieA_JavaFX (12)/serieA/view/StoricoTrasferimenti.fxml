@@ -35,7 +35,7 @@
         <HBox alignment="CENTER_RIGHT"
               style="-fx-padding:10 20 10 20; -fx-background-color:#16213e;">
             <Button text="Chiudi" onAction="#handleChiudi"
-                    style="-fx-background-color:#e94560; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:8 20 8 20; -fx-cursor:hand;"/>
+                    style="-fx-text-fill:#e94560; -fx-background-radius:6; -fx-padding:8 20 8 20; -fx-cursor:hand;"/>
         </HBox>
     </VBox>
 </AnchorPane>

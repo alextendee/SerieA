@@ -3,9 +3,14 @@ package serieA.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import serieA.model.Gestione;
 import serieA.model.Squadra;
+import javafx.scene.image.ImageView;
+
+import java.io.File;
+
 
 public class StatisticheSquadraController {
     @FXML private Label lblNome;
@@ -14,6 +19,7 @@ public class StatisticheSquadraController {
     @FXML private Label lblGol;
     @FXML private Label lblBilancio;
     @FXML private Button btnBilancio;
+    @FXML private ImageView imgLogo;
 
     private Gestione gestione;
     private Squadra squadra;
@@ -38,6 +44,14 @@ public class StatisticheSquadraController {
         lblGol.setText(String.format("Gol fatti: %d  |  Gol subiti: %d  |  Differenza: %+d",
                 squadra.getGolFatti(), squadra.getGolSubiti(),
                 squadra.getGolFatti() - squadra.getGolSubiti()));
+        String percorsoLogo = squadra.getLogo();
+        if (percorsoLogo != null && !percorsoLogo.isEmpty()) {
+            File fileLogo = new File(percorsoLogo);
+            if (fileLogo.exists()) {
+                imgLogo.setImage(new Image(fileLogo.toURI().toString()));
+            }
+        }
+
 
         // Bilancio visibile all'admin della squadra o al super admin
         boolean puoVedereBilancio = isSuperAdmin || (isAdmin && squadra.getNome().equals(squadraAdmin));
